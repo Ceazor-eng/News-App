@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="News App"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:padding="4dp"
+                android:gravity="center"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:textStyle="italic"></TextView>
+
+        </RelativeLayout>
+    </Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/categories"
+        android:orientation="horizontal"
+        android:layout_below="@id/toolbar"
+        tools:listitem="@layout/categories_rv_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/news"
+        android:orientation="vertical"
+        android:layout_below="@id/categories"
+        tools:listitem="@layout/news_rv_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loading"
+        android:visibility="gone"/>
+
+
+
+</RelativeLayout>
